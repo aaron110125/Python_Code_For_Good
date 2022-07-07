@@ -18,3 +18,5 @@ def string_sort(vmware_string):
 
 string_sort(vmware_string)
 
+#Output: Vmware135
+
