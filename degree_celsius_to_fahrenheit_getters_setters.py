@@ -9,18 +9,23 @@ class degree_Celsius():
 
     #getter_method
     def get_temperature(self):
+        print("Getting value...")
         return self._temperature
 
     #setter method
     def set_temperature(self,value):
+        print("Setting value...")
         if value < -273.15:
             raise ValueError("Temperature is below -273.15 and is not possible")
         self._temperature = value
 
+    # creating a property object
+    temperature = property(get_temperature, set_temperature)
+
+
 human = degree_Celsius(37)
-print(human.get_temperature())
+print(human.temperature)
 print(human.to_degree_fahrenheit())
-print(human.set_temperature(-300))
-print(human.get_temperature())
-print(human.to_degree_fahrenheit())
+human.temperature = -300
+
 
