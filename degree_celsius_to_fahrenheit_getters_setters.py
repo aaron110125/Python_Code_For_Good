@@ -1,31 +1,28 @@
-#Making use of getters and setters methods
+# easy testing mechanism
 
-class degree_Celsius():
-    def __init__(self, temperature = 0):
-        self.set_temperature(temperature)
+#Using @property decorator
 
-    def to_degree_fahrenheit(self):
-        return (self.get_temperature() * 1.8) + 32
+class Celsius:
+    def __init__(self, temperature=0):
+        self.temperature = temperature
 
-    #getter_method
-    def get_temperature(self):
+    def to_fahrenheit(self):
+        return (self.temperature * 1.8) + 32
+
+    @property
+    def temperature(self):
         print("Getting value...")
         return self._temperature
 
-    #setter method
-    def set_temperature(self,value):
+    @temperature.setter
+    def temperature(self, value):
         print("Setting value...")
         if value < -273.15:
-            raise ValueError("Temperature is below -273.15 and is not possible")
+            raise ValueError("Temperature below -273 is not possible")
         self._temperature = value
 
-    # creating a property object
-    temperature = property(get_temperature, set_temperature)
 
-
-human = degree_Celsius(37)
+human = Celsius(37)
 print(human.temperature)
-print(human.to_degree_fahrenheit())
-human.temperature = -300
-
-
+print(human.to_fahrenheit())
+coldest_thing = Celsius(-300)
