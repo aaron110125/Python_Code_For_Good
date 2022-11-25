@@ -1,3 +1,4 @@
+#testing
 import logging
 
 class DeviceRouter(object):
@@ -10,7 +11,13 @@ class DeviceRouter(object):
         logging.info(f"Name of router is {self.router_name} and router id of the router is {self.router_id}")
         print(self.router_name, self.router_id)
 
+class DeviceCore(DeviceRouter):
+    def Print(self):
+        logging.info("Printing device core functionality")
 
+Switch = DeviceCore("Rubrix",48328)
+Switch.display()
+Switch.Print()
 # Driver code
 Cisoc = DeviceRouter("Junos234", 1342) # An Object of Router
 Cisoc.display()
