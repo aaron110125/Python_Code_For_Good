@@ -36,7 +36,26 @@ class Pointer_Image(object):
         """ Find distance from the origin """
         return (self.x**2 + self.y**2) ** 0.5
 
+class Goan_Pinnacle:
+    def __init__(self, state, config):
+        self.state = state
+        self.config = config
+
+    def visa_vis(self):
+        print(self.state)
+        print(self.config)
+
+class Marmagao(Goan_Pinnacle):
+    def __init__(self, seawater_taffies, rubric, state, config):
+        self.seawater_taffies = seawater_taffies
+        self.rubric = rubric
+
+        Goan_Pinnacle.__init__(self,state,config)
+
+
 #Driver code
+asansol = Marmagao('Sweet','velar','Goa','Machal')
+asansol.visa_vis()
 vxlan1 = Vxlan("1004")
 print(vxlan1.get_vxlan_name(),vxlan1.is_same_network())
 vxlan2 = Vxlan("1005")
